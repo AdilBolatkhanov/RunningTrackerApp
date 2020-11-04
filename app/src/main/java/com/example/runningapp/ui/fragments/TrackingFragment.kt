@@ -56,7 +56,17 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mapView.onCreate(savedInstanceState)
+        setClickListeners()
 
+        mapView.getMapAsync {
+            map = it
+            addAllPolylines()
+        }
+
+        subscribeToObservers()
+    }
+
+    private fun setClickListeners() {
         btnToggleRun.setOnClickListener {
             toggleRun()
         }
@@ -65,13 +75,6 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
             zoomToSeeWholeTrack()
             endRunAndSaveToDb()
         }
-
-        mapView.getMapAsync {
-            map = it
-            addAllPolylines()
-        }
-
-        subscribeToObservers()
     }
 
     private fun subscribeToObservers() {
