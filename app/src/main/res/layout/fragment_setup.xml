@@ -11,7 +11,7 @@
         android:layout_marginStart="8dp"
         android:text="Welcome!\nPlease enter your name and weight."
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="27sp"
         app:layout_constraintBottom_toTopOf="@+id/tilName"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -49,8 +49,8 @@
             android:id="@+id/etWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Your Weight"
             android:ems="10"
+            android:hint="Your Weight"
             android:inputType="numberDecimal" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:text="Continue"
             android:textColor="@color/colorAccent"
-            android:textSize="24sp"
+            android:textSize="23sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

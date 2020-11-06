@@ -6,7 +6,6 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import com.example.runningapp.R
 import com.example.runningapp.other.CustomMarkerView
 import com.example.runningapp.other.TrackingUtility
@@ -55,13 +54,13 @@ class StatisticsFragment : Fragment(R.layout.fragment_statistics) {
     }
 
     private fun subscribeToObservers() {
-        viewModel.totalTimeRun.observe(viewLifecycleOwner, Observer {
+        viewModel.totalTimeRun.observe(viewLifecycleOwner, {
             it?.let {
                 val totalTimeRun = TrackingUtility.getFormattedStopWatchTime(it)
                 tvTotalTime.text = totalTimeRun
             }
         })
-        viewModel.totalDistance.observe(viewLifecycleOwner, Observer {
+        viewModel.totalDistance.observe(viewLifecycleOwner, {
             it?.let {
                 val km = it / 1000f
                 val totalDistance = round(km * 10f) / 10f
@@ -69,27 +68,27 @@ class StatisticsFragment : Fragment(R.layout.fragment_statistics) {
                 tvTotalDistance.text = totalDistanceString
             }
         })
-        viewModel.totalAvgSpeed.observe(viewLifecycleOwner, Observer {
+        viewModel.totalAvgSpeed.observe(viewLifecycleOwner, {
             it?.let {
                 val avgSpeed = round(it * 10f) / 10f
                 val avgSpeedString = "${avgSpeed}km/h"
                 tvAverageSpeed.text = avgSpeedString
             }
         })
-        viewModel.totalCaloriesBurned.observe(viewLifecycleOwner, Observer {
+        viewModel.totalCaloriesBurned.observe(viewLifecycleOwner, {
             it?.let {
                 val totalCalories = "${it}kcal"
                 tvTotalCalories.text = totalCalories
             }
         })
-        viewModel.runsSortedByDate.observe(viewLifecycleOwner, Observer {
+        viewModel.runsSortedByDate.observe(viewLifecycleOwner, {
             it?.let {
                 val allAvgSpeeds = it.indices.map { i -> BarEntry(i.toFloat(), it[i].avgSpeedInKMH) }
-                val bardataSet = BarDataSet(allAvgSpeeds, "Avg Speed Over Time").apply {
+                val barDataSet = BarDataSet(allAvgSpeeds, "Avg Speed Over Time").apply {
                     valueTextColor = Color.WHITE
                     color = ContextCompat.getColor(requireContext(), R.color.colorAccent)
                 }
-                barChart.data = BarData(bardataSet)
+                barChart.data = BarData(barDataSet)
                 barChart.marker = CustomMarkerView(it.reversed(), requireContext(), R.layout.marker_view)
                 barChart.invalidate()
             }
