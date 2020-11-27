@@ -11,7 +11,7 @@
         android:layout_marginStart="8dp"
         android:text="Welcome!\nPlease enter your name and weight."
         android:textAlignment="center"
-        android:textSize="27sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/tilName"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
