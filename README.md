@@ -1,5 +1,5 @@
 # RunningTrackerApp
-An app that tracks your running on Google Map and also can work as a foreground service. User can
+An app that tracks your running on Google Map that works as a foreground service. User can
 track their progress by viewing all runs and overall statistics: calories burned, distance, time, speed
 
 ## Applied concepts
