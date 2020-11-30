@@ -4,12 +4,12 @@ track their progress by viewing all runs and overall statistics: calories burned
 
 ## Applied concepts
 * Kotlin
-* MVVM
-* DI: Dagger-Hilt
-* Google Map
-* Navigation Component
-* Room
-* Coroutines
+* MVVM architecture
+* Dagger-Hilt as dependency injection
+* Google Map API to show map, current location, and the path that the user passed.
+* A single-activity architecture, using the Navigation Component to manage fragment operations
+* Room to store all runs
+* Kotlin Coroutines for background operations
 
 ## Screenshots
  
