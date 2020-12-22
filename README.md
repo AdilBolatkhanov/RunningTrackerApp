@@ -2,7 +2,7 @@
 An app that tracks your running on Google Map that works as a foreground service. User can
 track their progress by viewing all runs and overall statistics: calories burned, distance, time, speed
 
-## Applied concepts
+## Tech Stack
 * 100% Kotlin
 * Modern Architecture: Model-View-ViewModel, Clean Architecture
 * Reactive UIs using [LiveData][3] observables and [Data Binding][4].
